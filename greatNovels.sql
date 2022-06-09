@@ -2,7 +2,7 @@ CREATE DATABASE novels;
 
 CREATE USER 'novels_user'@'localhost' IDENTIFIED BY 'NovelBooks!';
 
-GRANT ALL ON novels.* TO 'novels'@'localhost';
+GRANT ALL ON novels.* TO 'novels_user'@'localhost';
 
 USE novels;
 
@@ -35,7 +35,7 @@ CREATE TABLE novels (
 	PRIMARY KEY(id),
 	FOREIGN KEY(authorId) REFERENCES authors(id)
     );
-	
+
 CREATE TABLE novelsGenres(
 	genreId INT,
 	novelId INT,
