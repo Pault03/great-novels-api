@@ -17,6 +17,10 @@ app.get('/novels', getAllNovelsWithAuthorsAndGenres)
 
 app.get('/novels/:id', getNovelByIdWithAuthorsAndGenres)
 
+app.get('*', (req, res) => {
+  return res.status(404).send('Page not found. Try /authors or /novels or /genres to get started.')
+})
+
 app.listen(1337, () => {
   console.log('Listening on port 1337...') // eslint-disable-line no-console
 })
